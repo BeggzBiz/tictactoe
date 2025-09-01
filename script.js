@@ -54,8 +54,17 @@ function updateDifficultyVisibility() {
 }
 
 function updateStatus() {
+    // Remove any existing game-over classes
+    statusDisplay.classList.remove('game-over', 'draw');
+
     if (gameState.gameOver) {
-        statusDisplay.textContent = `Game Over! ${gameState.currentPlayer} wins!`;
+        if (checkDraw()) {
+            statusDisplay.textContent = "It's a draw!";
+            statusDisplay.classList.add('draw');
+        } else {
+            statusDisplay.textContent = `Game Over! ${gameState.currentPlayer} wins!`;
+            statusDisplay.classList.add('game-over');
+        }
         return;
     }
 
