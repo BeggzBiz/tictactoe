@@ -22,25 +22,59 @@ h1 {
 }
 
 .game-info {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
 }
 
 .player-mode {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.difficulty-mode {
+    margin-bottom: 20px;
 }
 
 .status {
     font-size: 18px;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     color: #555;
+    transition: all 0.3s ease;
+}
+
+.status.game-over {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #4CAF50;
+    padding: 15px;
+    border-radius: 8px;
+    animation: pulse 1s infinite;
+}
+
+.status.draw {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #ff9800;
+    padding: 15px;
+    border-radius: 8px;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
 }
 
 .counters {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    margin-bottom: 10px;
+    gap: 30px;
+    margin-bottom: 20px;
 }
 
 .counter-info {
